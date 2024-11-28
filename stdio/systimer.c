@@ -24,7 +24,6 @@ uint8_t systimer_init(uint16_t systick)
 	{
 		OCR1A = _OCR1A;
 		TIMSK |= (1 << OCIE1A);
-		sei();
 		TCCR1B = (1 << WGM12) | (index + 1);
 	}
 		
