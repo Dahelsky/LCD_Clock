@@ -6,9 +6,9 @@ void buttonInit(uint8_t pin)
 	BUTTON_PORT |= (1<<pin); //pullup
 }
 
-struct button checkButton(struct button checkedButton)
+button checkButton(button checkedButton)
 {
-	struct button result = {checkedButton.pin,checkedButton.state};
+	struct button result = checkedButton;
 	if(!(BUTTON_PIN & (1<<checkedButton.pin)))
 	{
 		switch(checkedButton.state)
@@ -34,4 +34,17 @@ struct button checkButton(struct button checkedButton)
 		}
 	}
 	return result;
+}
+
+uint8_t isButtonClicked(button checkedButton)
+{
+	if(checkedButton.state == 2)
+		return 0;
+	return 1;
+}
+
+
+void confirmClick(button* Button)
+{
+	Button->state = 3;
 }

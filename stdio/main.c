@@ -17,9 +17,9 @@
 #define BUTTON_MIN 1
 #define BUTTON_SEK 0
 
-struct button przyciskGodziny={BUTTON_GODZ,0};
-struct button przyciskMinuty={BUTTON_MIN,0};
-struct button przyciskSekundy={BUTTON_SEK,0};
+button przyciskGodziny={BUTTON_GODZ,0};
+button przyciskMinuty={BUTTON_MIN,0};
+button przyciskSekundy={BUTTON_SEK,0};
 
 
 volatile uint8_t timer0_ovf_counter=0;
@@ -100,29 +100,33 @@ int main(void)
 
 	while (1) 
 	{
-		if(przyciskSekundy.state==2)
+		if(isButtonClicked(przyciskSekundy))
 		{
 			TCNT1=0;
-			przyciskSekundy.state=3;
+			confirmClick(&przyciskGodziny);
 			czas[5]=0;
 			czas[4]=0;
 			LCD_Clear();
 			wyswietlCzas(czas);
 		}
-		przyciskMinuty.state = 3;
-		if(++czas[3]>=10)
+		if(isButtonClicked(przyciskMinuty));
 		{
-			if(++czas[2]>=6)
+			confirmClick(&przyciskGodziny);
+			if(++czas[3]>=10)
 			{
-				czas[2]=0;
+				if(++czas[2]>=6)
+				{
+					czas[2]=0;
+				}
+				czas[3]=0;
+				LCD_Clear();
+				wyswietlCzas(czas);
 			}
-			czas[3]=0;
-			LCD_Clear();
-			wyswietlCzas(czas);
 		}
-		if(przyciskGodziny.state==2)
+		
+		if(isButtonClicked(przyciskGodziny))
 		{
-			przyciskGodziny.state=3;
+			confirmClick(&przyciskGodziny);
 			if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
 			{
 				++czas[0];
