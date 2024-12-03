@@ -150,10 +150,10 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="buttons.c">
+    <Compile Include="button.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="buttons.h">
+    <Compile Include="button.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="lcd.c">
@@ -163,9 +163,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="main.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="pcf8574.c">

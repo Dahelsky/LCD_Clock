@@ -1,5 +1,5 @@
-#ifndef BUTTONS_H_
-#define BUTTONS_H_
+#ifndef BUTTON_H_
+#define BUTTON_H_
 
 #include <stdint.h>
 #include <avr/io.h>

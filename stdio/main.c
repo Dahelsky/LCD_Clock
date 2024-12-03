@@ -3,7 +3,7 @@
 #include "twi.h"
 #include "lcd.h"
 #include "systimer.h"
-#include "buttons.h"
+#include "button.h"
 #include <stdio.h>
 #include <avr/pgmspace.h>
 #include <stdint.h>

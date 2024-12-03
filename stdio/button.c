@@ -1,4 +1,4 @@
-#include "buttons.h"
+#include "button.h"
 
 void buttonInit(uint8_t pin)
 {

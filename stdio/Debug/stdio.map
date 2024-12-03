@@ -37,11 +37,11 @@ Discarded input sections
 
  .data          0x00000000        0x0 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .bss           0x00000000        0x0 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .text          0x00000000        0x0 buttons.o
- .data          0x00000000        0x0 buttons.o
- .bss           0x00000000        0x0 buttons.o
+ .text          0x00000000        0x0 button.o
+ .data          0x00000000        0x0 button.o
+ .bss           0x00000000        0x0 button.o
  .text.buttonInit
-                0x00000000       0x24 buttons.o
+                0x00000000       0x24 button.o
  .text          0x00000000        0x0 lcd.o
  .data          0x00000000        0x0 lcd.o
  .bss           0x00000000        0x0 lcd.o
@@ -238,7 +238,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
-LOAD buttons.o
+LOAD button.o
 LOAD lcd.o
 LOAD main.o
 LOAD pcf8574.o
@@ -354,7 +354,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x127c
+.text           0x00000000     0x1282
  *(.vectors)
  .vectors       0x00000000       0x54 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -440,99 +440,99 @@ END GROUP
                 0x000001a4                . = ALIGN (0x2)
  *(.text.*)
  .text.checkButton
-                0x000001a4       0x38 buttons.o
+                0x000001a4       0x38 button.o
                 0x000001a4                checkButton
  .text.LCD_WriteCommand
-                0x000001dc       0x4c lcd.o
+                0x000001dc       0x4e lcd.o
                 0x000001dc                LCD_WriteCommand
  .text.LCD_WriteData
-                0x00000228       0x4c lcd.o
-                0x00000228                LCD_WriteData
+                0x0000022a       0x4e lcd.o
+                0x0000022a                LCD_WriteData
  .text.LCD_Clear
-                0x00000274       0x14 lcd.o
-                0x00000274                LCD_Clear
+                0x00000278       0x14 lcd.o
+                0x00000278                LCD_Clear
  .text.LCD_Init
-                0x00000288       0x90 lcd.o
-                0x00000288                LCD_Init
+                0x0000028c       0x92 lcd.o
+                0x0000028c                LCD_Init
  .text.__vector_11
-                0x00000318       0x96 main.o
-                0x00000318                __vector_11
+                0x0000031e       0x96 main.o
+                0x0000031e                __vector_11
  .text.wyswietlCzas
-                0x000003ae       0x4c main.o
-                0x000003ae                wyswietlCzas
+                0x000003b4       0x4c main.o
+                0x000003b4                wyswietlCzas
  .text.systimer_callback
-                0x000003fa       0x7a main.o
-                0x000003fa                systimer_callback
- .text.main     0x00000474       0xd0 main.o
-                0x00000474                main
+                0x00000400       0x7a main.o
+                0x00000400                systimer_callback
+ .text.main     0x0000047a       0xd0 main.o
+                0x0000047a                main
  .text.PCF8574_WritePort
-                0x00000544       0x1c pcf8574.o
-                0x00000544                PCF8574_WritePort
+                0x0000054a       0x1c pcf8574.o
+                0x0000054a                PCF8574_WritePort
  .text.systimer_init
-                0x00000560      0x160 systimer.o
-                0x00000560                systimer_init
+                0x00000566      0x160 systimer.o
+                0x00000566                systimer_init
  .text.__vector_7
-                0x000006c0       0x48 systimer.o
-                0x000006c0                __vector_7
+                0x000006c6       0x48 systimer.o
+                0x000006c6                __vector_7
  .text.TWI_init
-                0x00000708        0x6 twi.o
-                0x00000708                TWI_init
- .text.TWI_stop
                 0x0000070e        0x6 twi.o
-                0x0000070e                TWI_stop
+                0x0000070e                TWI_init
+ .text.TWI_stop
+                0x00000714        0x6 twi.o
+                0x00000714                TWI_stop
  .text.TWI_wait
-                0x00000714        0x8 twi.o
-                0x00000714                TWI_wait
+                0x0000071a        0x8 twi.o
+                0x0000071a                TWI_wait
  .text.TWI_start
-                0x0000071c        0xa twi.o
-                0x0000071c                TWI_start
+                0x00000722        0xa twi.o
+                0x00000722                TWI_start
  .text.TWI_write
-                0x00000726        0xc twi.o
-                0x00000726                TWI_write
+                0x0000072c        0xc twi.o
+                0x0000072c                TWI_write
  .text.avr-libc
-                0x00000732      0x6fa e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
-                0x00000732                vfprintf
+                0x00000738      0x6fa e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+                0x00000738                vfprintf
  .text.libgcc.mul
-                0x00000e2c       0x20 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulsi3.o)
-                0x00000e2c                __mulsi3
+                0x00000e32       0x20 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulsi3.o)
+                0x00000e32                __mulsi3
  .text.libgcc.div
-                0x00000e4c       0x44 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000e4c                __udivmodsi4
+                0x00000e52       0x44 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000e52                __udivmodsi4
  .text.libgcc.mul
-                0x00000e90       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
-                0x00000e90                __muluhisi3
+                0x00000e96       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
+                0x00000e96                __muluhisi3
  .text.libgcc.prologue
-                0x00000ea6       0x38 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
-                0x00000ea6                __prologue_saves__
+                0x00000eac       0x38 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
+                0x00000eac                __prologue_saves__
  .text.libgcc.prologue
-                0x00000ede       0x36 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
-                0x00000ede                __epilogue_restores__
+                0x00000ee4       0x36 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
+                0x00000ee4                __epilogue_restores__
  .text.libgcc.mul
-                0x00000f14       0x1e e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x00000f14                __umulhisi3
+                0x00000f1a       0x1e e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000f1a                __umulhisi3
  .text.avr-libc
-                0x00000f32      0x1b0 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
-                0x00000f32                __ftoa_engine
+                0x00000f38      0x1b0 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                0x00000f38                __ftoa_engine
  .text.avr-libc
-                0x000010e2       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x000010e2                strnlen_P
+                0x000010e8       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x000010e8                strnlen_P
  .text.avr-libc
-                0x000010f8       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x000010f8                strnlen
+                0x000010fe       0x16 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x000010fe                strnlen
  .text.avr-libc
-                0x0000110e       0x36 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fprintf_p.o)
-                0x0000110e                fprintf_P
+                0x00001114       0x36 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fprintf_p.o)
+                0x00001114                fprintf_P
  .text.avr-libc
-                0x00001144       0x78 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x00001144                fputc
+                0x0000114a       0x78 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x0000114a                fputc
  .text.avr-libc
-                0x000011bc       0xbc e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x000011bc                __ultoa_invert
-                0x00001278                . = ALIGN (0x2)
+                0x000011c2       0xbc e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x000011c2                __ultoa_invert
+                0x0000127e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001278        0x0 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00001278                _exit
-                0x00001278                exit
+ .fini9         0x0000127e        0x0 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x0000127e                _exit
+                0x0000127e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -551,11 +551,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001278        0x4 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000127e        0x4 e:/microchip studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000127c                _etext = .
+                0x00001282                _etext = .
 
-.data           0x00800060       0x22 load address 0x0000127c
+.data           0x00800060       0x22 load address 0x00001282
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -590,8 +590,8 @@ END GROUP
                 0x00800083                przyciskSekundy
  *(COMMON)
                 0x00800085                PROVIDE (__bss_end, .)
-                0x0000127c                __data_load_start = LOADADDR (.data)
-                0x0000129e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001282                __data_load_start = LOADADDR (.data)
+                0x000012a4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800085        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -639,7 +639,7 @@ END GROUP
 
 .comment        0x00000000       0x5c
  *(.comment)
- .comment       0x00000000       0x30 buttons.o
+ .comment       0x00000000       0x30 button.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 lcd.o
  .comment       0x00000030       0x31 main.o
@@ -674,7 +674,7 @@ END GROUP
 .debug_aranges  0x00000000      0x150
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x28 buttons.o
+                0x00000000       0x28 button.o
  .debug_aranges
                 0x00000028       0x50 lcd.o
  .debug_aranges
@@ -689,69 +689,69 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1340
+.debug_info     0x00000000     0x1342
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_info    0x000004e6       0xfc buttons.o
- .debug_info    0x000005e2      0x5bb lcd.o
- .debug_info    0x00000b9d      0x3c9 main.o
- .debug_info    0x00000f66      0x162 pcf8574.o
- .debug_info    0x000010c8      0x14e systimer.o
- .debug_info    0x00001216      0x12a twi.o
+ .debug_info    0x000004e6       0xfc button.o
+ .debug_info    0x000005e2      0x5bd lcd.o
+ .debug_info    0x00000b9f      0x3c9 main.o
+ .debug_info    0x00000f68      0x162 pcf8574.o
+ .debug_info    0x000010ca      0x14e systimer.o
+ .debug_info    0x00001218      0x12a twi.o
 
-.debug_abbrev   0x00000000      0xaad
+.debug_abbrev   0x00000000      0xab6
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_abbrev  0x000004a3       0xc5 buttons.o
- .debug_abbrev  0x00000568      0x173 lcd.o
- .debug_abbrev  0x000006db      0x1a1 main.o
- .debug_abbrev  0x0000087c       0xc3 pcf8574.o
- .debug_abbrev  0x0000093f       0xcf systimer.o
- .debug_abbrev  0x00000a0e       0x9f twi.o
+ .debug_abbrev  0x000004a3       0xc5 button.o
+ .debug_abbrev  0x00000568      0x17c lcd.o
+ .debug_abbrev  0x000006e4      0x1a1 main.o
+ .debug_abbrev  0x00000885       0xc3 pcf8574.o
+ .debug_abbrev  0x00000948       0xcf systimer.o
+ .debug_abbrev  0x00000a17       0x9f twi.o
 
-.debug_line     0x00000000      0xa95
+.debug_line     0x00000000      0xa92
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_line    0x00000116       0xe5 buttons.o
- .debug_line    0x000001fb      0x2e7 lcd.o
- .debug_line    0x000004e2      0x27b main.o
- .debug_line    0x0000075d       0xe1 pcf8574.o
- .debug_line    0x0000083e      0x12d systimer.o
- .debug_line    0x0000096b      0x12a twi.o
+ .debug_line    0x00000116       0xe3 button.o
+ .debug_line    0x000001f9      0x2e7 lcd.o
+ .debug_line    0x000004e0      0x27a main.o
+ .debug_line    0x0000075a       0xe1 pcf8574.o
+ .debug_line    0x0000083b      0x12d systimer.o
+ .debug_line    0x00000968      0x12a twi.o
 
 .debug_frame    0x00000000      0x35c
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 buttons.o
+ .debug_frame   0x00000000       0x34 button.o
  .debug_frame   0x00000034       0xb4 lcd.o
  .debug_frame   0x000000e8       0xd0 main.o
  .debug_frame   0x000001b8       0x44 pcf8574.o
  .debug_frame   0x000001fc       0xec systimer.o
  .debug_frame   0x000002e8       0x74 twi.o
 
-.debug_str      0x00000000      0x55e
+.debug_str      0x00000000      0x55d
  *(.debug_str)
  .debug_str     0x00000000      0x196 E:/Microchip Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x150 buttons.o
-                                0x189 (size before relaxing)
- .debug_str     0x000002e6       0xe9 lcd.o
+ .debug_str     0x00000196      0x14f button.o
+                                0x188 (size before relaxing)
+ .debug_str     0x000002e5       0xe9 lcd.o
                                 0x22a (size before relaxing)
- .debug_str     0x000003cf       0xe3 main.o
+ .debug_str     0x000003ce       0xe3 main.o
                                 0x250 (size before relaxing)
- .debug_str     0x000004b2       0x46 pcf8574.o
+ .debug_str     0x000004b1       0x46 pcf8574.o
                                 0x199 (size before relaxing)
- .debug_str     0x000004f8       0x52 systimer.o
+ .debug_str     0x000004f7       0x52 systimer.o
                                 0x1c0 (size before relaxing)
- .debug_str     0x0000054a       0x14 twi.o
+ .debug_str     0x00000549       0x14 twi.o
                                 0x184 (size before relaxing)
 
-.debug_loc      0x00000000      0xa8d
+.debug_loc      0x00000000      0xa5b
  *(.debug_loc)
- .debug_loc     0x00000000       0x89 buttons.o
- .debug_loc     0x00000089      0x4bc lcd.o
- .debug_loc     0x00000545      0x1f3 main.o
- .debug_loc     0x00000738       0x99 pcf8574.o
- .debug_loc     0x000007d1      0x28f systimer.o
- .debug_loc     0x00000a60       0x2d twi.o
+ .debug_loc     0x00000000       0x89 button.o
+ .debug_loc     0x00000089      0x48a lcd.o
+ .debug_loc     0x00000513      0x1f3 main.o
+ .debug_loc     0x00000706       0x99 pcf8574.o
+ .debug_loc     0x0000079f      0x28f systimer.o
+ .debug_loc     0x00000a2e       0x2d twi.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -773,7 +773,7 @@ END GROUP
 
 .debug_ranges   0x00000000      0x108
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x18 buttons.o
+ .debug_ranges  0x00000000       0x18 button.o
  .debug_ranges  0x00000018       0x58 lcd.o
  .debug_ranges  0x00000070       0x28 main.o
  .debug_ranges  0x00000098       0x18 pcf8574.o

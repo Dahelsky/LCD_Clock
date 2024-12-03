@@ -1,4 +1,4 @@
-lcd.d lcd.o: .././lcd.c .././lcd.h \
+main.d main.o: .././main.c .././main.h .././pcf8574.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -10,12 +10,21 @@ lcd.d lcd.o: .././lcd.c .././lcd.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
+ .././twi.h .././lcd.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././pcf8574.h .././twi.h
+ .././systimer.h \
+ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+ .././button.h \
+ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
+ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
+ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
-.././lcd.h:
+.././main.h:
+
+.././pcf8574.h:
 
 e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -39,12 +48,26 @@ e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.
 
 e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
+.././twi.h:
+
+.././lcd.h:
+
 e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
 
 e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
-.././pcf8574.h:
+.././systimer.h:
 
-.././twi.h:
+e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+
+.././button.h:
+
+e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
+
+e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
+
+e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+e:\microchip\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
