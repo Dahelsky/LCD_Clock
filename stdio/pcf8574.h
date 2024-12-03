@@ -6,7 +6,6 @@
 
 //#define PCF8574Addr				0b01111110		// adres ukladu typu A
 #define PCF8574Addr				0b01001110		// adres ukladu
-
 uint8_t PCF8574_ReadPort(void);
 void PCF8574_WritePort(uint8_t data);
 

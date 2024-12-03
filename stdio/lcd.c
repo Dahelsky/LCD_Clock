@@ -1,6 +1,6 @@
 /*
-    Funkcje do obslugi wyswietlacza alfanumerycznego LCD
-    * wyswietlacz podlaczony przez TWI
+   Funkcje do obslugi wyswietlacza alfanumerycznego LCD
+   * wyswietlacz podlaczony przez TWI
  */
 
 #include "lcd.h"
