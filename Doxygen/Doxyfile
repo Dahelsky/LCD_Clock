@@ -1070,7 +1070,26 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which Doxygen is
 # run.
 
-EXCLUDE                =
+EXCLUDE                = ../LCD_Clock/Debug/button.d \
+                         ../LCD_Clock/Debug/button.o \
+                         ../LCD_Clock/Debug/lcd.d \
+                         ../LCD_Clock/Debug/lcd.o \
+                         ../LCD_Clock/Debug/LCD_Clock.eep \
+                         ../LCD_Clock/Debug/LCD_Clock.elf \
+                         ../LCD_Clock/Debug/LCD_Clock.hex \
+                         ../LCD_Clock/Debug/LCD_Clock.lss \
+                         ../LCD_Clock/Debug/LCD_Clock.map \
+                         ../LCD_Clock/Debug/LCD_Clock.srec \
+                         ../LCD_Clock/Debug/main.d \
+                         ../LCD_Clock/Debug/main.o \
+                         ../LCD_Clock/Debug/makedep.mk \
+                         ../LCD_Clock/Debug/Makefile \
+                         ../LCD_Clock/Debug/pcf8574.d \
+                         ../LCD_Clock/Debug/pcf8574.o \
+                         ../LCD_Clock/Debug/systimer.d \
+                         ../LCD_Clock/Debug/systimer.o \
+                         ../LCD_Clock/Debug/twi.d \
+                         ../LCD_Clock/Debug/twi.o
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
