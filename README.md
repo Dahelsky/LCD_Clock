@@ -1,1 +1,1 @@
-# progc
+# PMwJC projekt
