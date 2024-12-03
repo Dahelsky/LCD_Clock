@@ -421,10 +421,10 @@ void LCD_Init(void)
      330:	08 95       	ret
 
 00000332 <__vector_11>:
-
-
+//zliczanie przerwañ licznika 0
 volatile uint8_t timer0_ovf_counter=0;
 
+//eliminacja drgañ
 ISR(TIMER0_OVF_vect)
 {
      332:	1f 92       	push	r1
@@ -542,11 +542,11 @@ void wyswietlCzas(uint8_t* czas)
 
 00000414 <systimer_callback>:
 static uint8_t  czas[] = {1,0,3,0,3,0};
-#endif
 
 void systimer_callback()
 {
-	if(++czas[5]>=10)//sek jednosci
+	//sekundy
+	if(++czas[5]>=10)//jednoœci
      414:	e0 e6       	ldi	r30, 0x60	; 96
      416:	f0 e0       	ldi	r31, 0x00	; 0
      418:	85 81       	ldd	r24, Z+5	; 0x05
@@ -555,29 +555,31 @@ void systimer_callback()
      41e:	8a 30       	cpi	r24, 0x0A	; 10
      420:	78 f1       	brcs	.+94     	; 0x480 <systimer_callback+0x6c>
 	{
-		if(++czas[4]>=6) //sek dziesi
+		if(++czas[4]>=6) //dziesi¹tki
      422:	84 81       	ldd	r24, Z+4	; 0x04
      424:	8f 5f       	subi	r24, 0xFF	; 255
      426:	84 83       	std	Z+4, r24	; 0x04
      428:	86 30       	cpi	r24, 0x06	; 6
      42a:	40 f1       	brcs	.+80     	; 0x47c <systimer_callback+0x68>
 		{
-			if(++czas[3]>=10) // min jednosci
+			//minuty
+			if(++czas[3]>=10) //jednoœci
      42c:	83 81       	ldd	r24, Z+3	; 0x03
      42e:	8f 5f       	subi	r24, 0xFF	; 255
      430:	83 83       	std	Z+3, r24	; 0x03
      432:	8a 30       	cpi	r24, 0x0A	; 10
      434:	08 f1       	brcs	.+66     	; 0x478 <systimer_callback+0x64>
 			{
-				if(++czas[2]>=6) //min dziesiatki
+				if(++czas[2]>=6) //dziesiatki
      436:	82 81       	ldd	r24, Z+2	; 0x02
      438:	8f 5f       	subi	r24, 0xFF	; 255
      43a:	82 83       	std	Z+2, r24	; 0x02
      43c:	86 30       	cpi	r24, 0x06	; 6
      43e:	d0 f0       	brcs	.+52     	; 0x474 <systimer_callback+0x60>
 				{
-					//godziny jednosci
-					if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
+					//godziny
+					// przedzia³: 0-19
+					if((czas[0]<2) && (++czas[1]>=10))
      440:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
      444:	82 30       	cpi	r24, 0x02	; 2
      446:	48 f4       	brcc	.+18     	; 0x45a <systimer_callback+0x46>
@@ -594,7 +596,8 @@ void systimer_callback()
      456:	11 82       	std	Z+1, r1	; 0x01
      458:	0b c0       	rjmp	.+22     	; 0x470 <systimer_callback+0x5c>
 					}
-					else if((czas[0]==2) && (++czas[1]>=4)) // godz: 20-24
+					// przedzia³: 20-24
+					else if((czas[0]==2) && (++czas[1]>=4))
      45a:	82 30       	cpi	r24, 0x02	; 2
      45c:	49 f4       	brne	.+18     	; 0x470 <systimer_callback+0x5c>
      45e:	e0 e6       	ldi	r30, 0x60	; 96
@@ -622,7 +625,6 @@ void systimer_callback()
 		czas[5]=0;
      47c:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <__DATA_REGION_ORIGIN__+0x5>
 	}
-	
 	LCD_Clear();
      480:	0e 94 46 01 	call	0x28c	; 0x28c <LCD_Clear>
 	
@@ -633,10 +635,10 @@ void systimer_callback()
      48c:	08 95       	ret
 
 0000048e <main>:
-}
 
 int main(void)
 {
+	//inicjalizacja
 	
 	systimer_init(1000);//1sek
      48e:	88 ee       	ldi	r24, 0xE8	; 232
@@ -667,6 +669,7 @@ int main(void)
      4b0:	90 e0       	ldi	r25, 0x00	; 0
      4b2:	0e 94 e4 01 	call	0x3c8	; 0x3c8 <wyswietlCzas>
 
+
 	while (1) 
 	{
 		if(isButtonClicked(przyciskSekundy))
@@ -676,6 +679,7 @@ int main(void)
      4c2:	88 23       	and	r24, r24
      4c4:	81 f0       	breq	.+32     	; 0x4e6 <main+0x58>
 		{
+			//resetowanie systimera
 			TCNT1=0;
      4c6:	1d bc       	out	0x2d, r1	; 45
      4c8:	1c bc       	out	0x2c, r1	; 44
@@ -683,6 +687,7 @@ int main(void)
      4ca:	86 e7       	ldi	r24, 0x76	; 118
      4cc:	90 e0       	ldi	r25, 0x00	; 0
      4ce:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <confirmClick>
+			//zerowanie sekund
 			czas[5]=0;
      4d2:	e0 e6       	ldi	r30, 0x60	; 96
      4d4:	f0 e0       	ldi	r31, 0x00	; 0
@@ -705,6 +710,7 @@ int main(void)
      4f2:	86 e7       	ldi	r24, 0x76	; 118
      4f4:	90 e0       	ldi	r25, 0x00	; 0
      4f6:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <confirmClick>
+			//inkrementowanie minut
 			if(++czas[3]>=10)
      4fa:	e0 e6       	ldi	r30, 0x60	; 96
      4fc:	f0 e0       	ldi	r31, 0x00	; 0
@@ -747,7 +753,8 @@ int main(void)
      538:	86 e7       	ldi	r24, 0x76	; 118
      53a:	90 e0       	ldi	r25, 0x00	; 0
      53c:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <confirmClick>
-			if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
+			//inkrementowanie godzin
+			if((czas[0]<2) && (++czas[1]>=10)) // przedzia³: 0-19
      540:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
      544:	82 30       	cpi	r24, 0x02	; 2
      546:	58 f4       	brcc	.+22     	; 0x55e <main+0xd0>
@@ -766,7 +773,7 @@ int main(void)
      55a:	11 82       	std	Z+1, r1	; 0x01
      55c:	0b c0       	rjmp	.+22     	; 0x574 <main+0xe6>
 			}
-			else if((czas[0]==2) && (++czas[1]>=4)) // godz: 20-24
+			else if((czas[0]==2) && (++czas[1]>=4)) // przedzia³: 20-24
      55e:	82 30       	cpi	r24, 0x02	; 2
      560:	49 f4       	brne	.+18     	; 0x574 <main+0xe6>
      562:	e0 e6       	ldi	r30, 0x60	; 96
@@ -997,7 +1004,7 @@ void systimer_callback(void)
 	return error_code;
 }
 
-ISR(TIMER1_COMPA_vect)
+ISR(TIMER1_COMPA_vect) //przerwanie
 {
      6fe:	1f 92       	push	r1
      700:	0f 92       	push	r0

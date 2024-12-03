@@ -30,7 +30,7 @@ uint8_t systimer_init(uint16_t systick)
 	return error_code;
 }
 
-ISR(TIMER1_COMPA_vect)
+ISR(TIMER1_COMPA_vect) //przerwanie
 {
 	systimer_callback();
 }

@@ -1,5 +1,3 @@
-#include "main.h"
-#include "pcf8574.h"
 #include "twi.h"
 #include "lcd.h"
 #include "systimer.h"
@@ -10,20 +8,21 @@
 #include <util/delay.h>
 #include <avr/io.h>
 
-//#define CHECK
-
 // przyciski
 #define BUTTON_GODZ 2
 #define BUTTON_MIN 1
 #define BUTTON_SEK 0
 
+//inicjalizacja struktur przycisków dla czasu
 button przyciskGodziny={BUTTON_GODZ,0};
 button przyciskMinuty={BUTTON_MIN,0};
 button przyciskSekundy={BUTTON_SEK,0};
 
 
+//zliczanie przerwañ licznika 0
 volatile uint8_t timer0_ovf_counter=0;
 
+//eliminacja drgañ
 ISR(TIMER0_OVF_vect)
 {
 	if(++timer0_ovf_counter >=2)
@@ -36,34 +35,36 @@ ISR(TIMER0_OVF_vect)
 	}
 }
 
-void wyswietlCzas(uint8_t* czas);
+void wyswietlCzas(uint8_t* czas); // wyœwietlanie czasu na wyœwietlaczu LCD
 FILE LCDstdout = FDEV_SETUP_STREAM((void*)LCD_WriteData, NULL, _FDEV_SETUP_WRITE);
 
 
-#ifndef CHECK
-static uint8_t czas[] = {2,3,5,9,3,0};
-#else
-
+// 0,1 - godziny
+// 2,3 - minuty
+// 4,5 - sekundy
 static uint8_t  czas[] = {1,0,3,0,3,0};
-#endif
 
 void systimer_callback()
 {
-	if(++czas[5]>=10)//sek jednosci
+	//sekundy
+	if(++czas[5]>=10)//jednoœci
 	{
-		if(++czas[4]>=6) //sek dziesi
+		if(++czas[4]>=6) //dziesi¹tki
 		{
-			if(++czas[3]>=10) // min jednosci
+			//minuty
+			if(++czas[3]>=10) //jednoœci
 			{
-				if(++czas[2]>=6) //min dziesiatki
+				if(++czas[2]>=6) //dziesiatki
 				{
-					//godziny jednosci
-					if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
+					//godziny
+					// przedzia³: 0-19
+					if((czas[0]<2) && (++czas[1]>=10))
 					{
 						++czas[0];
 						czas[1]=0;
 					}
-					else if((czas[0]==2) && (++czas[1]>=4)) // godz: 20-24
+					// przedzia³: 20-24
+					else if((czas[0]==2) && (++czas[1]>=4))
 					{
 						czas[1]=0;
 						czas[0]=0;
@@ -76,7 +77,6 @@ void systimer_callback()
 		}
 		czas[5]=0;
 	}
-	
 	LCD_Clear();
 	
 	wyswietlCzas(czas);
@@ -84,6 +84,7 @@ void systimer_callback()
 
 int main(void)
 {
+	//inicjalizacja
 	
 	systimer_init(1000);//1sek
 	
@@ -98,12 +99,15 @@ int main(void)
 	
 	wyswietlCzas(czas);
 
+
 	while (1) 
 	{
 		if(isButtonClicked(przyciskSekundy))
 		{
+			//resetowanie systimera
 			TCNT1=0;
 			confirmClick(&przyciskGodziny);
+			//zerowanie sekund
 			czas[5]=0;
 			czas[4]=0;
 			LCD_Clear();
@@ -112,6 +116,7 @@ int main(void)
 		if(isButtonClicked(przyciskMinuty));
 		{
 			confirmClick(&przyciskGodziny);
+			//inkrementowanie minut
 			if(++czas[3]>=10)
 			{
 				if(++czas[2]>=6)
@@ -127,12 +132,13 @@ int main(void)
 		if(isButtonClicked(przyciskGodziny))
 		{
 			confirmClick(&przyciskGodziny);
-			if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
+			//inkrementowanie godzin
+			if((czas[0]<2) && (++czas[1]>=10)) // przedzia³: 0-19
 			{
 				++czas[0];
 				czas[1]=0;
 			}
-			else if((czas[0]==2) && (++czas[1]>=4)) // godz: 20-24
+			else if((czas[0]==2) && (++czas[1]>=4)) // przedzia³: 20-24
 			{
 				czas[1]=0;
 				czas[0]=0;
