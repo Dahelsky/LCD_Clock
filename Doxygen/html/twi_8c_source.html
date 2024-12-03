@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LCD_Clock: Plik źródłowy twi.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">LCD_Clock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj',true);
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('twi_8c_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">twi.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="twi_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="twi_8h.html">twi.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="twi_8c.html#a71f87696dc8b5feed0ad493754190421">    3</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="twi_8c.html#a71f87696dc8b5feed0ad493754190421">TWI_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    TWBR = 12 * 3;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">// SCLfreq = CLKXtal / (16 + 2 * TWBR * 4 ^ TWPS1:TWPS0)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="twi_8c.html#a4911e4a929fa76e1324d7df296e6076c">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="twi_8c.html#a4911e4a929fa76e1324d7df296e6076c">TWI_start</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    TWCR = (1&lt;&lt;TWINT)|(1&lt;&lt;TWSTA)|(1&lt;&lt;TWEN);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="twi_8c.html#a6483f679bb5397c41bb296ebd04d034c">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="twi_8c.html#a6483f679bb5397c41bb296ebd04d034c">TWI_stop</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    TWCR = (1&lt;&lt;TWINT)|(1&lt;&lt;TWSTO)|(1&lt;&lt;TWEN);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">   23</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">while</span> ((TWCR &amp; (1 &lt;&lt; TWINT)) == 0);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="twi_8c.html#a2c5b953228b37b1e19f2171a6c7e8df6">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="twi_8c.html#a2c5b953228b37b1e19f2171a6c7e8df6">TWI_write</a>(uint8_t data)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    TWDR = data;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    TWCR = (1&lt;&lt;TWINT)|(1&lt;&lt;TWEN);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="twi_8c.html#a84e03d4017bbef2379ce78689ae58c8f">   35</a></span>uint8_t <a class="code hl_function" href="twi_8c.html#a84e03d4017bbef2379ce78689ae58c8f">TWI_read</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    TWCR = (1&lt;&lt;TWINT)|(1&lt;&lt;TWEN);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> TWDR;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
+<div class="ttc" id="atwi_8c_html_a2c5b953228b37b1e19f2171a6c7e8df6"><div class="ttname"><a href="twi_8c.html#a2c5b953228b37b1e19f2171a6c7e8df6">TWI_write</a></div><div class="ttdeci">void TWI_write(uint8_t data)</div><div class="ttdoc">Wyslanie bajtu danych na magistrale TWI.</div><div class="ttdef"><b>Definicja</b> <a href="#l00028">twi.c:28</a></div></div>
+<div class="ttc" id="atwi_8c_html_a4911e4a929fa76e1324d7df296e6076c"><div class="ttname"><a href="twi_8c.html#a4911e4a929fa76e1324d7df296e6076c">TWI_start</a></div><div class="ttdeci">void TWI_start(void)</div><div class="ttdoc">Wyslanie sygnalu START na magistrali TWI.</div><div class="ttdef"><b>Definicja</b> <a href="#l00012">twi.c:12</a></div></div>
+<div class="ttc" id="atwi_8c_html_a6483f679bb5397c41bb296ebd04d034c"><div class="ttname"><a href="twi_8c.html#a6483f679bb5397c41bb296ebd04d034c">TWI_stop</a></div><div class="ttdeci">void TWI_stop(void)</div><div class="ttdoc">Wyslanie sygnalu STOP na magistrali TWI.</div><div class="ttdef"><b>Definicja</b> <a href="#l00018">twi.c:18</a></div></div>
+<div class="ttc" id="atwi_8c_html_a71f87696dc8b5feed0ad493754190421"><div class="ttname"><a href="twi_8c.html#a71f87696dc8b5feed0ad493754190421">TWI_init</a></div><div class="ttdeci">void TWI_init(void)</div><div class="ttdoc">ustawianie szybkosci transmijsi danych</div><div class="ttdef"><b>Definicja</b> <a href="#l00003">twi.c:3</a></div></div>
+<div class="ttc" id="atwi_8c_html_a84e03d4017bbef2379ce78689ae58c8f"><div class="ttname"><a href="twi_8c.html#a84e03d4017bbef2379ce78689ae58c8f">TWI_read</a></div><div class="ttdeci">uint8_t TWI_read(void)</div><div class="ttdoc">Odebranie bajtu danych z magistrali TWI.</div><div class="ttdef"><b>Definicja</b> <a href="#l00035">twi.c:35</a></div></div>
+<div class="ttc" id="atwi_8c_html_ac340ebdfdf8521f95196243c1c20a0c5"><div class="ttname"><a href="twi_8c.html#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a></div><div class="ttdeci">void TWI_wait(void)</div><div class="ttdoc">Oczekiwanie na koniec komunikacji.</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">twi.c:23</a></div></div>
+<div class="ttc" id="atwi_8h_html"><div class="ttname"><a href="twi_8h.html">twi.h</a></div><div class="ttdoc">Funkcje do obslugi TWI (Two Wire Interface) dla avr.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="twi_8c.html">twi.c</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

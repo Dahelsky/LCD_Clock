@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LCD_Clock: Dokumentacja pliku twi.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">LCD_Clock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj',true);
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('twi_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku twi.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="twi_8h_source.html">twi.h</a>&quot;</code><br />
+</div>
+<p><a href="twi_8c_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a71f87696dc8b5feed0ad493754190421" id="r_a71f87696dc8b5feed0ad493754190421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f87696dc8b5feed0ad493754190421">TWI_init</a> (void)</td></tr>
+<tr class="memdesc:a71f87696dc8b5feed0ad493754190421"><td class="mdescLeft">&#160;</td><td class="mdescRight">ustawianie szybkosci transmijsi danych  <br /></td></tr>
+<tr class="separator:a71f87696dc8b5feed0ad493754190421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4911e4a929fa76e1324d7df296e6076c" id="r_a4911e4a929fa76e1324d7df296e6076c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4911e4a929fa76e1324d7df296e6076c">TWI_start</a> (void)</td></tr>
+<tr class="memdesc:a4911e4a929fa76e1324d7df296e6076c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyslanie sygnalu START na magistrali TWI.  <br /></td></tr>
+<tr class="separator:a4911e4a929fa76e1324d7df296e6076c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6483f679bb5397c41bb296ebd04d034c" id="r_a6483f679bb5397c41bb296ebd04d034c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6483f679bb5397c41bb296ebd04d034c">TWI_stop</a> (void)</td></tr>
+<tr class="memdesc:a6483f679bb5397c41bb296ebd04d034c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyslanie sygnalu STOP na magistrali TWI.  <br /></td></tr>
+<tr class="separator:a6483f679bb5397c41bb296ebd04d034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac340ebdfdf8521f95196243c1c20a0c5" id="r_ac340ebdfdf8521f95196243c1c20a0c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac340ebdfdf8521f95196243c1c20a0c5">TWI_wait</a> (void)</td></tr>
+<tr class="memdesc:ac340ebdfdf8521f95196243c1c20a0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oczekiwanie na koniec komunikacji.  <br /></td></tr>
+<tr class="separator:ac340ebdfdf8521f95196243c1c20a0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5b953228b37b1e19f2171a6c7e8df6" id="r_a2c5b953228b37b1e19f2171a6c7e8df6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c5b953228b37b1e19f2171a6c7e8df6">TWI_write</a> (uint8_t data)</td></tr>
+<tr class="memdesc:a2c5b953228b37b1e19f2171a6c7e8df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyslanie bajtu danych na magistrale TWI.  <br /></td></tr>
+<tr class="separator:a2c5b953228b37b1e19f2171a6c7e8df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84e03d4017bbef2379ce78689ae58c8f" id="r_a84e03d4017bbef2379ce78689ae58c8f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84e03d4017bbef2379ce78689ae58c8f">TWI_read</a> (void)</td></tr>
+<tr class="memdesc:a84e03d4017bbef2379ce78689ae58c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odebranie bajtu danych z magistrali TWI.  <br /></td></tr>
+<tr class="separator:a84e03d4017bbef2379ce78689ae58c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a71f87696dc8b5feed0ad493754190421" name="a71f87696dc8b5feed0ad493754190421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f87696dc8b5feed0ad493754190421">&#9670;&#160;</a></span>TWI_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TWI_init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ustawianie szybkosci transmijsi danych </p>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00003">3</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+<a id="a84e03d4017bbef2379ce78689ae58c8f" name="a84e03d4017bbef2379ce78689ae58c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e03d4017bbef2379ce78689ae58c8f">&#9670;&#160;</a></span>TWI_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TWI_read </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odebranie bajtu danych z magistrali TWI. </p>
+<p>Na rejestr TWCR na bitach TWINT i TWEN zapisywana jest logiczna jedynka uruchamiajac transmisje. Nastepnie jest oczekwianie, az zostana przyjete dane w rejestrze TWDR.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>odebrany bajt </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00035">35</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+<a id="a4911e4a929fa76e1324d7df296e6076c" name="a4911e4a929fa76e1324d7df296e6076c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4911e4a929fa76e1324d7df296e6076c">&#9670;&#160;</a></span>TWI_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TWI_start </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyslanie sygnalu START na magistrali TWI. </p>
+<p>W rejestrze TWCR na bitach TWINT, TWSTA, TWEN zapisywane sa jedynki logiczne. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00012">12</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+<a id="a6483f679bb5397c41bb296ebd04d034c" name="a6483f679bb5397c41bb296ebd04d034c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6483f679bb5397c41bb296ebd04d034c">&#9670;&#160;</a></span>TWI_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TWI_stop </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyslanie sygnalu STOP na magistrali TWI. </p>
+<p>W rejestrze TWCR na bitach TWINT, TWSTO, TWEN zapisywane sa jedynki logiczne. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00018">18</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+<a id="ac340ebdfdf8521f95196243c1c20a0c5" name="ac340ebdfdf8521f95196243c1c20a0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac340ebdfdf8521f95196243c1c20a0c5">&#9670;&#160;</a></span>TWI_wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TWI_wait </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oczekiwanie na koniec komunikacji. </p>
+<p>Czeka, az na bicie TWINT rejestru TWCR jest ustawiona jedynka logiczna, oznaczajac koniec transmisji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00023">23</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+<a id="a2c5b953228b37b1e19f2171a6c7e8df6" name="a2c5b953228b37b1e19f2171a6c7e8df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5b953228b37b1e19f2171a6c7e8df6">&#9670;&#160;</a></span>TWI_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TWI_write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyslanie bajtu danych na magistrale TWI. </p>
+<p>Do rejestru TWDR zapisywany jest bajt danych do przeslania na magistrale TWI Nastepnie na rejestr TWCR na bitach TWINT i TWEN zapisywana jest logiczna jedynka uruchamiajac transmisje.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>bajt danych do przeslania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="twi_8c_source.html#l00028">28</a> pliku <a class="el" href="twi_8c_source.html">twi.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="twi_8c.html">twi.c</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

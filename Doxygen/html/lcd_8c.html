@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LCD_Clock: Dokumentacja pliku lcd.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">LCD_Clock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj',true);
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lcd_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku lcd.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lcd_8h_source.html">lcd.h</a>&quot;</code><br />
+</div>
+<p><a href="lcd_8c_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:adcccc7cd4b257cb70337233d53d6d088" id="r_adcccc7cd4b257cb70337233d53d6d088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcccc7cd4b257cb70337233d53d6d088">LCD_WriteCommand</a> (unsigned char commandToWrite)</td></tr>
+<tr class="memdesc:adcccc7cd4b257cb70337233d53d6d088"><td class="mdescLeft">&#160;</td><td class="mdescRight">wysylanie komendy do wyswietlacza  <br /></td></tr>
+<tr class="separator:adcccc7cd4b257cb70337233d53d6d088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d18c948406ad43e83329ca2ed71dea" id="r_a10d18c948406ad43e83329ca2ed71dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10d18c948406ad43e83329ca2ed71dea">LCD_WriteData</a> (unsigned char dataToWrite)</td></tr>
+<tr class="memdesc:a10d18c948406ad43e83329ca2ed71dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyslanie znaku do wyswietlenia.  <br /></td></tr>
+<tr class="separator:a10d18c948406ad43e83329ca2ed71dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41338684cb13c169dab9a3120198e6c" id="r_ab41338684cb13c169dab9a3120198e6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab41338684cb13c169dab9a3120198e6c">LCD_WriteText</a> (char *text)</td></tr>
+<tr class="memdesc:ab41338684cb13c169dab9a3120198e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyslanie ciagu znakow do wyswietlenia.  <br /></td></tr>
+<tr class="separator:ab41338684cb13c169dab9a3120198e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c2062f080148e56a97fefdaffda10d" id="r_a04c2062f080148e56a97fefdaffda10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04c2062f080148e56a97fefdaffda10d">LCD_GoTo</a> (unsigned char x, unsigned char y)</td></tr>
+<tr class="memdesc:a04c2062f080148e56a97fefdaffda10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawienie kursora.  <br /></td></tr>
+<tr class="separator:a04c2062f080148e56a97fefdaffda10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60d0b62d7eb3fa31266c095d7b3c245" id="r_ae60d0b62d7eb3fa31266c095d7b3c245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</a> (void)</td></tr>
+<tr class="memdesc:ae60d0b62d7eb3fa31266c095d7b3c245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyczyszczenie ekranu.  <br /></td></tr>
+<tr class="separator:ae60d0b62d7eb3fa31266c095d7b3c245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff81ad208241ea7c4cbf62d6f681dc82" id="r_aff81ad208241ea7c4cbf62d6f681dc82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff81ad208241ea7c4cbf62d6f681dc82">LCD_Home</a> (void)</td></tr>
+<tr class="memdesc:aff81ad208241ea7c4cbf62d6f681dc82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skierowanie kursora na poczatek oraz przywrocenie ekranu do stanu przed przesunieciem.  <br /></td></tr>
+<tr class="separator:aff81ad208241ea7c4cbf62d6f681dc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa53c9d40f3aa552a9974cd55ac510cb3" id="r_aa53c9d40f3aa552a9974cd55ac510cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa53c9d40f3aa552a9974cd55ac510cb3">LCD_Init</a> (void)</td></tr>
+<tr class="memdesc:aa53c9d40f3aa552a9974cd55ac510cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">inicjalizacja ekranu LCD  <br /></td></tr>
+<tr class="separator:aa53c9d40f3aa552a9974cd55ac510cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ae60d0b62d7eb3fa31266c095d7b3c245" name="ae60d0b62d7eb3fa31266c095d7b3c245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60d0b62d7eb3fa31266c095d7b3c245">&#9670;&#160;</a></span>LCD_Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Clear </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyczyszczenie ekranu. </p>
+<dl class="section note"><dt>Nota</dt><dd>po tej komendzie ma miejsce opoznienie 2 ms. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00058">58</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="a04c2062f080148e56a97fefdaffda10d" name="a04c2062f080148e56a97fefdaffda10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c2062f080148e56a97fefdaffda10d">&#9670;&#160;</a></span>LCD_GoTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_GoTo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawienie kursora. </p>
+<p>Ustawienie kursora na wskazana pozycje na wyswietlaczu. W jednym rzedzie jest 16 pozycji, adresacja pierwszego rzedu zaczyna sie od 0x00, a konczy na 0x0F, adresacja drugiego rzedu zaczyna sie od 0x40, a konczy na 0x4F.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>numer kolumny/pozycji w rzedzie [0,15]. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>numer rzedu [0,1]. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00053">53</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="aff81ad208241ea7c4cbf62d6f681dc82" name="aff81ad208241ea7c4cbf62d6f681dc82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff81ad208241ea7c4cbf62d6f681dc82">&#9670;&#160;</a></span>LCD_Home()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Home </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skierowanie kursora na poczatek oraz przywrocenie ekranu do stanu przed przesunieciem. </p>
+<dl class="section remark"><dt>Spostrzeżenia</dt><dd>ustawienie tez stosuje sie do efektow kursora. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00064">64</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="aa53c9d40f3aa552a9974cd55ac510cb3" name="aa53c9d40f3aa552a9974cd55ac510cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53c9d40f3aa552a9974cd55ac510cb3">&#9670;&#160;</a></span>LCD_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>inicjalizacja ekranu LCD </p>
+<p>Wywoluje szereg funkcji LCD_WriteCommand, z predefiniowanymi ustawieniami. Opis ustawien jest w pliku .c </p>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00070">70</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="adcccc7cd4b257cb70337233d53d6d088" name="adcccc7cd4b257cb70337233d53d6d088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcccc7cd4b257cb70337233d53d6d088">&#9670;&#160;</a></span>LCD_WriteCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_WriteCommand </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>commandToWrite</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>wysylanie komendy do wyswietlacza </p>
+<p>Funkcja poprzez TWI wysyla komendy do wyswietlacza HD44780. Do zmiennej tymczasowej, zostaje zapisany stan wysoki 'Enable' (LCD_E) oraz pierwsze 4 bity [7:4] komendy. Nastepnie zawartosc tej zmiennej jest przeslana przez TWI do konwertera. Potem przeslany jest tylko stan niski 'Enable', by wczesniej przeslane dane zostaly zapisane w wyswietlaczu. Nastepnie zostaje ponownie zapisany stan wysoki 'Enable' oraz pozostale 4 bity [3:0] komendy. I znowu przeslany jest stan niski 'Enable'</p>
+<p>Po tym ma miejsce opoznienie 50 mikrosekund, wedlug zalecen noty katalogowej wyswietlacza.</p>
+<p>Lista komend konfiguracyjnych (na podstawie noty katalogowej):</p>
+<ul>
+<li>Czyszczenie wyswietlacza<ul>
+<li>DB0: 1</li>
+</ul>
+</li>
+<li>Powrot na poczatek wyswietlacza<ul>
+<li>DB1: 1</li>
+</ul>
+</li>
+<li>Ustawienie trybu wprowadzania:<ul>
+<li>DB2: 1,</li>
+<li>DB1: 1 - Inkrementacja,<ul>
+<li>0 - Dekrementacja;</li>
+</ul>
+</li>
+<li>DB0: 1 - Przesuwanie wyswietlacza...<ul>
+<li>DB1: 1 - w lewo,</li>
+<li>DB1: 0 - w prawo;</li>
+</ul>
+</li>
+<li>DB0: 0 - Brak przesuwania wyswietlacza;</li>
+</ul>
+</li>
+<li>Kontrola wyswietlania<ul>
+<li>DB3: 1,</li>
+<li>DB2: 1 - Wlaczenie wyswietlacza<ul>
+<li>0 - Wylaczenie wyswietlacza</li>
+</ul>
+</li>
+<li>DB1: 1 - Wyswietlanie kursora<ul>
+<li>0 - Nie wyswietlanie kursora</li>
+</ul>
+</li>
+<li>DB0: 1 - Miganie kursora<ul>
+<li>0 - Brak migania kursora</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Przesuniecie wyswietlacza/kursora<ul>
+<li>DB4: 1,</li>
+<li>DB3: 1 - Przesuniecie wyswietlacza...</li>
+<li>DB2: 1 - ...w prawo 0 - ...w lewo</li>
+<li>DB3: 0 - Przesuniecie kursora...</li>
+<li>DB2: 1 - ...w prawo (inkrementacja aC) 0- ...w lewo (dekrementacja aC)</li>
+</ul>
+</li>
+<li>Ustawienie sposobu dzialania<ul>
+<li>DB5: 1</li>
+<li>DB4: 1 - tryb 8 bitowy (DB7-DB0)<ul>
+<li>0 - tryb 4 bitowy (DB7:DB4)</li>
+</ul>
+</li>
+<li>DB3: 1 - Uzycie dwoch rzedow do wyswietlania<ul>
+<li>DB2: Wartosc bez znaczenia <br  />
+</li>
+</ul>
+</li>
+<li>DB3: 0 - Jeden wiersz do wyswietlania z ustawieniem czcionki...<ul>
+<li>DB2: 1 - ...5x10 kropek</li>
+<li>0 - ...5x8 kropek</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<dl class="section remark"><dt>Spostrzeżenia</dt><dd>Ta komenda musi byc przeslana na poczatku, poniewaz konfigurowany jest tryb dzialania wyswietlacza: 8-bit i 4-bit. Tutaj jest uzywany tryb 4-bitowy, przez co niektore ustawienia nie mialyby skutku. W LCD_Init zostalo to wziete pod uwage.</dd></dl>
+<ul>
+<li>Ustawianie adresow CGRaM:<ul>
+<li>DB6:1 -DB5-0: Sluzy do stworzenia wlasnych znakow w czcionce 8x5</li>
+</ul>
+</li>
+<li>Ustawianie adresu DDRaM<ul>
+<li>DB7:1 Ustawienie kursora na konkretne miejsce w wyswietlaczu</li>
+</ul>
+</li>
+</ul>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">commandToWrite</td><td>komenda do wyslania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00008">8</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="a10d18c948406ad43e83329ca2ed71dea" name="a10d18c948406ad43e83329ca2ed71dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d18c948406ad43e83329ca2ed71dea">&#9670;&#160;</a></span>LCD_WriteData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_WriteData </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>dataToWrite</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyslanie znaku do wyswietlenia. </p>
+<p>Funkcja poprzez TWI wysyla znak do wyswietlacza HD44780. Do zmiennej tymczasowej, zostaje zapisany stan wysoki RS, stan wysoki 'Enable' (LCD_E) oraz pierwsze 4 bity [7:4] znaku. Nastepnie zawartosc tej zmiennej jest przeslana przez TWI do konwertera. Potem przeslany jest tylko stan niski 'Enable', by wczesniej przeslane dane zostaly zapisane w wyswietlaczu. Nastepnie zostaje ponownie zapisany stan wysoki 'Enable' oraz pozostale 4 bity [3:0] znaku. I znowu przeslany jest stan niski 'Enable'</p>
+<p>Wyslany znak zostanie wyswietlony zgodnie z ustawieniami trybu wprowadzania.</p>
+<p>Po tym ma miejsce opoznienie 50 mikrosekund, wedlug zalecen noty katalogowej wyswietlacza.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataToWrite</td><td>znak do wyslania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00027">27</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+<a id="ab41338684cb13c169dab9a3120198e6c" name="ab41338684cb13c169dab9a3120198e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41338684cb13c169dab9a3120198e6c">&#9670;&#160;</a></span>LCD_WriteText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LCD_WriteText </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyslanie ciagu znakow do wyswietlenia. </p>
+<p>Przechodzi po lancuchu znakow wywolujac funkcje LCD_WriteData dla kazdego znaku.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*text</td><td>wskaznik na tablice znakow do wyswietlenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>po przekroczeniu zakresu dlugosci rzedu, pozostaly tekst zostanie wyswietlony w drugim rzedzie. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="lcd_8c_source.html#l00048">48</a> pliku <a class="el" href="lcd_8c_source.html">lcd.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="lcd_8c.html">lcd.c</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
