@@ -19,15 +19,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00000a69  00000000  00000000  000029c3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000b08  00000000  00000000  0000342c  2**0
+  8 .debug_line   00000a98  00000000  00000000  0000342c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000428  00000000  00000000  00003f34  2**2
+  9 .debug_frame  00000428  00000000  00000000  00003ec4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000567  00000000  00000000  0000435c  2**0
+ 10 .debug_str    00000566  00000000  00000000  000042ec  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000de7  00000000  00000000  000048c3  2**0
+ 11 .debug_loc    00000de7  00000000  00000000  00004852  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000108  00000000  00000000  000056aa  2**0
+ 12 .debug_ranges 00000108  00000000  00000000  00005639  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -431,9 +431,9 @@ void LCD_Init(void)
 
 00000368 <__vector_11>:
 
-
-uint8_t sprawdzPrzycisk(unsigned char przycisk, uint8_t tryb);
 volatile uint8_t timer0_ovf_counter=0;
+
+//obsluga przerwania licznika 0 - przepelnienie
 ISR(TIMER0_OVF_vect)
 {
      368:	1f 92       	push	r1
@@ -460,6 +460,7 @@ ISR(TIMER0_OVF_vect)
      394:	82 30       	cpi	r24, 0x02	; 2
      396:	10 f1       	brcs	.+68     	; 0x3dc <__vector_11+0x74>
 	{
+		//sprawdzanie przyciskow
 		
 		przyciskGodziny = checkButton(przyciskGodziny);
      398:	80 91 7c 00 	lds	r24, 0x007C	; 0x80007c <przyciskGodziny>
@@ -480,16 +481,13 @@ ISR(TIMER0_OVF_vect)
      3cc:	90 93 8a 00 	sts	0x008A, r25	; 0x80008a <przyciskSekundy+0x1>
      3d0:	80 93 89 00 	sts	0x0089, r24	; 0x800089 <przyciskSekundy>
 		
+		//reset licznika przepelnien
 		timer0_ovf_counter=0;
      3d4:	10 92 88 00 	sts	0x0088, r1	; 0x800088 <__data_end>
 		TCNT0 = 43;
      3d8:	8b e2       	ldi	r24, 0x2B	; 43
      3da:	82 bf       	out	0x32, r24	; 50
 	}
-	
-	
-
-	
 }
      3dc:	ff 91       	pop	r31
      3de:	ef 91       	pop	r30
@@ -510,12 +508,12 @@ ISR(TIMER0_OVF_vect)
      3fc:	18 95       	reti
 
 000003fe <systimer_callback>:
-static int czas[] = {2,3,5,9,3,0};
-
 void systimer_callback()
 {
+	//zegar
 	
-	if(++czas[5]>=10)//sek jednosci
+	//inkrementacja sekund
+	if(++czas[5]>=10)//jednosci
      3fe:	e0 e6       	ldi	r30, 0x60	; 96
      400:	f0 e0       	ldi	r31, 0x00	; 0
      402:	82 85       	ldd	r24, Z+10	; 0x0a
@@ -527,7 +525,7 @@ void systimer_callback()
      40e:	0c f4       	brge	.+2      	; 0x412 <__EEPROM_REGION_LENGTH__+0x12>
      410:	4b c0       	rjmp	.+150    	; 0x4a8 <__EEPROM_REGION_LENGTH__+0xa8>
 	{
-		if(++czas[4]>=6) //sek dziesi
+		if(++czas[4]>=6) //dziesiatki
      412:	80 85       	ldd	r24, Z+8	; 0x08
      414:	91 85       	ldd	r25, Z+9	; 0x09
      416:	01 96       	adiw	r24, 0x01	; 1
@@ -537,7 +535,8 @@ void systimer_callback()
      41e:	0c f4       	brge	.+2      	; 0x422 <__EEPROM_REGION_LENGTH__+0x22>
      420:	3f c0       	rjmp	.+126    	; 0x4a0 <__EEPROM_REGION_LENGTH__+0xa0>
 		{
-			if(++czas[3]>=10) // min jednosci
+			//inkrementacja minut
+			if(++czas[3]>=10) //jednosci
      422:	86 81       	ldd	r24, Z+6	; 0x06
      424:	97 81       	ldd	r25, Z+7	; 0x07
      426:	01 96       	adiw	r24, 0x01	; 1
@@ -546,7 +545,7 @@ void systimer_callback()
      42c:	0a 97       	sbiw	r24, 0x0a	; 10
      42e:	a4 f1       	brlt	.+104    	; 0x498 <__EEPROM_REGION_LENGTH__+0x98>
 			{
-				if(++czas[2]>=6) //min dziesiatki
+				if(++czas[2]>=6) //dziesiatki
      430:	84 81       	ldd	r24, Z+4	; 0x04
      432:	95 81       	ldd	r25, Z+5	; 0x05
      434:	01 96       	adiw	r24, 0x01	; 1
@@ -555,8 +554,8 @@ void systimer_callback()
      43a:	06 97       	sbiw	r24, 0x06	; 6
      43c:	4c f1       	brlt	.+82     	; 0x490 <__EEPROM_REGION_LENGTH__+0x90>
 				{
-					//godziny jednosci
-					if((czas[0]<2) && (++czas[1]>=10)) // godz: 0-19
+					//inkrementacja godzin
+					if((czas[0]<2) && (++czas[1]>=10)) // przedzial: 0-19
      43e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
      442:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
      446:	82 30       	cpi	r24, 0x02	; 2
@@ -581,7 +580,7 @@ void systimer_callback()
      466:	12 82       	std	Z+2, r1	; 0x02
      468:	0f c0       	rjmp	.+30     	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
 					}
-					else if((czas[0]==2) && (++czas[1]>=4)) // godz: 20-24
+					else if((czas[0]==2) && (++czas[1]>=4)) // przedzial: 20-24
      46a:	02 97       	sbiw	r24, 0x02	; 2
      46c:	69 f4       	brne	.+26     	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
      46e:	e0 e6       	ldi	r30, 0x60	; 96
@@ -618,10 +617,9 @@ void systimer_callback()
      4a4:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <__DATA_REGION_ORIGIN__+0xa>
 	}
 	
-	
+	//wyswietlenie czasu
 	LCD_Clear();
      4a8:	0e 94 62 01 	call	0x2c4	; 0x2c4 <LCD_Clear>
-	
 	fprintf_P(&LCDstdout, PSTR("%i%i:%i%i:%i%i"), czas[0],czas[1],czas[2],czas[3],czas[4],czas[5]);
      4ac:	e0 e6       	ldi	r30, 0x60	; 96
      4ae:	f0 e0       	ldi	r31, 0x00	; 0
@@ -670,9 +668,9 @@ void systimer_callback()
      504:	08 95       	ret
 
 00000506 <main>:
-
 int main(void)
 {
+	//inicjalizacja
 	
 	//przyciski
 	BUTTON_DDR &= ~((1<<BUTTON_GODZ)|(1<<BUTTON_MIN)|(1<<BUTTON_SEK)); //input od przyciskow
@@ -684,15 +682,15 @@ int main(void)
      50e:	87 60       	ori	r24, 0x07	; 7
      510:	8b bb       	out	0x1b, r24	; 27
 	
+	//Liczniki:
 	
-	
+	//Zegar (licznik 1)
 	systimer_init(1000);//1sek
      512:	88 ee       	ldi	r24, 0xE8	; 232
      514:	93 e0       	ldi	r25, 0x03	; 3
      516:	0e 94 c9 03 	call	0x792	; 0x792 <systimer_init>
-	//systimer_init(100);
 	
-	//timer0
+	//Eliminacja drgan stykow (licznik 0)
 	TCCR0 = (1<<CS02)|(1<<CS00);
      51a:	85 e0       	ldi	r24, 0x05	; 5
      51c:	83 bf       	out	0x33, r24	; 51
@@ -706,16 +704,13 @@ int main(void)
 	sei();
      528:	78 94       	sei
 	
-	
-	
-	
+	//Wyswietlacz + konwerter TWI-8 bit
 	TWI_init();
      52a:	0e 94 9d 04 	call	0x93a	; 0x93a <TWI_init>
 	LCD_Init();
      52e:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <LCD_Init>
 	
-
-	
+	//wyswietlenie czasu
 	fprintf_P(&LCDstdout, PSTR("%i%i:%i%i:%i%i"), czas[0],czas[1],czas[2],czas[3],czas[4],czas[5]);
      532:	e0 e6       	ldi	r30, 0x60	; 96
      534:	f0 e0       	ldi	r31, 0x00	; 0
@@ -760,10 +755,11 @@ int main(void)
      584:	9e bf       	out	0x3e, r25	; 62
      586:	0f be       	out	0x3f, r0	; 63
      588:	8d bf       	out	0x3d, r24	; 61
-
-	
 	while (1)
 	{
+		//sprawdzenie czy przyciski sa klikniete
+		
+		//przycisk zerowania sekund
 		if(isButtonClicked(przyciskSekundy))
      58a:	80 91 89 00 	lds	r24, 0x0089	; 0x800089 <przyciskSekundy>
      58e:	90 91 8a 00 	lds	r25, 0x008A	; 0x80008a <przyciskSekundy+0x1>
@@ -832,6 +828,8 @@ int main(void)
      606:	0f be       	out	0x3f, r0	; 63
      608:	8d bf       	out	0x3d, r24	; 61
 		}
+		
+		//przycisk inkrementacji minut
 		if(isButtonClicked(przyciskMinuty))
      60a:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <przyciskMinuty>
      60e:	90 91 7b 00 	lds	r25, 0x007B	; 0x80007b <przyciskMinuty+0x1>
@@ -920,6 +918,8 @@ int main(void)
      6ac:	0f be       	out	0x3f, r0	; 63
      6ae:	8d bf       	out	0x3d, r24	; 61
 		}
+		
+		//przycisk inkrementacji godzin
 		if(isButtonClicked(przyciskGodziny))
      6b0:	80 91 7c 00 	lds	r24, 0x007C	; 0x80007c <przyciskGodziny>
      6b4:	90 91 7d 00 	lds	r25, 0x007D	; 0x80007d <przyciskGodziny+0x1>
@@ -975,7 +975,7 @@ int main(void)
      70c:	11 82       	std	Z+1, r1	; 0x01
      70e:	10 82       	st	Z, r1
 			}
-			//przyciskGodziny.state=3;
+			
 			confirmClick(&przyciskGodziny);
      710:	8c e7       	ldi	r24, 0x7C	; 124
      712:	90 e0       	ldi	r25, 0x00	; 0

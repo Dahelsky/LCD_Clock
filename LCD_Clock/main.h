@@ -1,14 +1,11 @@
-/*
- * main.h
- *
- * Created: 05.12.2024 11:14:06
- *  Author: oem1
- */ 
-
-
 #ifndef MAIN_H_
 #define MAIN_H_
 
+/*!
+	@brief Pozostale elementy do dzialania projektu	
+	
+	Szczerze, jak jest to zrobione w taki sposob, to projekt dziala i boje sie tego zmieniac
+*/
 
 
 #define LCD_RS         	0

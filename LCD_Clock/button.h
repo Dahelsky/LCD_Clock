@@ -9,7 +9,7 @@
 #define BUTTON_DDR	DDRA
 #define BUTTON_PIN	PINA
 
-#
+
 /*!
 	@file button.h
 
@@ -36,7 +36,6 @@
 	<pre>
 	button przycisk={1, 0}
 	</pre>
-	
 */
 
 typedef struct button {

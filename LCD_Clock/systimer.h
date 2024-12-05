@@ -35,7 +35,16 @@ uint8_t systimer_init(uint16_t systick); // ms
 /*!
 	@brief funkcja wykonywana w momencie przerwania
 	
-	Pusta funkcja, ktora jest wywolywana, parametr 'weak' pozwala na zastapienie jej implementacji.
+	Pusta funkcja, ktora jest wywolywana, parametr 'weak' pozwala na zastapienie jej implementacji we wlasnym kodzie.
+	
+	w pliku np. main.c nale¿y wpisaæ tak:
+	<pre>
+	void systimer_callback()
+	{
+		<kod wykonywany>
+	}
+	</pre>
+	
 	
 */
 void systimer_callback(void) __attribute__((weak));
