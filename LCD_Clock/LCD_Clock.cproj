@@ -165,6 +165,9 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="main.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="pcf8574.c">
       <SubType>compile</SubType>
     </Compile>

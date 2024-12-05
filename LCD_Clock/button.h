@@ -38,19 +38,11 @@
 	</pre>
 	
 */
+
 typedef struct button {
 	uint8_t pin;	///< numer pinu
 	uint8_t state;	///< stan przycisku
 }button;
-
-/*!
-	@brief inicjalizacja portu a dla konkretnego przycisku
-	
-	Ustawia wartosc konkretnego bitu DDRa na 0 (input) oraz bitu PORTa (pullup)
-	
-	@param[in] pin numer pinu (1-8)
-*/
-void buttonInit(uint8_t pin);
 
 /*!
 	@brief aktualizacja stanu przycisku

@@ -18,17 +18,13 @@
 #ifndef LCD_H
 #define LCD_H
 
+#include "main.h"
 #include <avr/io.h>
 #include <util/delay.h>
 #include "pcf8574.h"
 
 
-#define LCD_RS         	0
-#define LCD_RW         	1
-#define LCD_E         	2
-#define LCD_BKLight		3
-#define LCD_DaTa        4
-#define F_CPU 14745000UL
+
 
 #define HD44780_CLEaR                   0x01
 

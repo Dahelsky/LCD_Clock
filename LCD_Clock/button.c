@@ -1,10 +1,5 @@
 #include "button.h"
 
-void buttonInit(uint8_t pin)
-{
-	BUTTON_DDR &= ~(1<<pin); //input 
-	BUTTON_PORT |= (1<<pin); //pullup
-}
 
 button checkButton(button checkedButton)
 {
@@ -39,8 +34,8 @@ button checkButton(button checkedButton)
 uint8_t isButtonClicked(button checkedButton)
 {
 	if(checkedButton.state == 2)
-		return 0;
-	return 1;
+		return 1;
+	return 0;
 }
 
 
